@@ -6,7 +6,6 @@ function About(props) {
 
   // create function to make api call
   const getAboutData = async () => {
-  useEffect(() => {getAboutData()}, []);
 
 		// make api call and get response
     const response = await fetch(props.URL + "about");
@@ -20,6 +19,8 @@ function About(props) {
   };
 
   // make an initial call for the data inside a useEffect, so it only happens once on component load
+  useEffect(() => {getAboutData()}, []);
+  
   // define a function that will return the JSX needed once we get the data
   const loaded = () => (
     <div>
