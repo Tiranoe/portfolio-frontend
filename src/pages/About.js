@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 function About(props) {
   // create state to hold about data
   const [about, setAbout] = useState(null);
+  useEffect(() => {getAboutData()}, []);
 
   // create function to make api call
   const getAboutData = async () => {
-    useEffect(() => {getAboutData()}, []);
 
 		// make api call and get response
     const response = await fetch(props.URL + "about");

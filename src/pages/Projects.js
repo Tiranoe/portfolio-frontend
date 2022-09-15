@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 function Projects(props) {
   // create state to hold projects
   const [projects, setProjects] = useState(null);
+  useEffect(() => {getProjectsData()}, []);
 
   //create function to make api call
   const getProjectsData = async () => {
-    useEffect(() => {getProjectsData()}, []);
 
 		//make api call and get response
     const response = await fetch(props.URL + "projects");
