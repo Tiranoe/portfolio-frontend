@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 function About(props) {
   // create state to hold about data
   const [about, setAbout] = useState(null);
+  useEffect(() => {getAboutData()}, []);
+
 
   // create function to make api call
   const getAboutData = async () => {
@@ -18,8 +20,6 @@ function About(props) {
   };
 
   // make an initial call for the data inside a useEffect, so it only happens once on component load
-  useEffect(() => getAboutData(), []);
-
   // define a function that will return the JSX needed once we get the data
   const loaded = () => (
     <div>
